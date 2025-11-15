@@ -13,11 +13,9 @@
   display: flex;
   align-items: center;
   z-index: 997;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   margin-top: 0;
   background: transparent;
-  -webkit-overflow-scrolling: touch;
   transform: scale(1) translateZ(0);
   transform-style: preserve-3d;
 }
@@ -42,14 +40,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   min-height: 100vh;
   padding: 2rem 0;
+  padding-top: 4rem;
   position: relative;
   z-index: 3;
   gap: 3rem;
   text-align: left;
   animation: heroFadeIn 1.2s ease-out forwards;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
 }
 
 @keyframes heroFadeIn {
@@ -446,9 +448,10 @@
   margin-top: 2rem;
   display: flex;
   gap: 1.5rem;
-  justify-content: center;
+  justify-content: flex-start;
   opacity: 0;
   animation: socialReveal 1s cubic-bezier(0.4, 0, 0.2, 1) 1.5s forwards;
+  width: 100%;
 }
 
 @keyframes socialReveal {
@@ -532,6 +535,7 @@
     text-align: center;
     gap: 2rem;
     padding: 1.5rem 0;
+    padding-top: 3rem;
     min-height: calc(100vh - 80px);
     justify-content: center;
   }
@@ -591,7 +595,7 @@
     padding: 1rem 0;
     gap: 1.5rem;
     min-height: calc(100vh - 80px);
-    padding-top: 2rem;
+    padding-top: 3rem;
     justify-content: center;
   }
   
@@ -676,6 +680,7 @@
 @media (max-width: 480px) {
   .hero-content {
     padding: 0.8rem 0;
+    padding-top: 2.5rem;
     gap: 1rem;
     min-height: calc(100vh - 60px);
     justify-content: center;
@@ -758,16 +763,15 @@
 
 @media (max-width: 393px) {
   #header {
-    padding-top: 120px;
-    align-items: flex-start;
+    align-items: center;
   }
   
   .hero-content {
     padding: 1rem 0.5rem;
-    padding-top: 1rem;
+    padding-top: 2rem;
     gap: 1rem;
     min-height: auto;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
   }
