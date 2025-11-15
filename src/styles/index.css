@@ -1,0 +1,464 @@
+/**
+* Template Name: Personal
+* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+* Updated: Mar 17 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  /* Brand Primaries - Light Blue Theme */
+  --primary-color: #3B82F6;
+  --primary-dark: #2563EB;
+  --primary-light: #60A5FA;
+  --secondary-color: #0a0a0a;
+  --accent-color: #8B5CF6;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --bg-primary: #040404;
+  --bg-secondary: rgba(255, 255, 255, 0.08);
+  --bg-tertiary: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.2);
+  --shadow-light: 0 4px 20px rgba(59, 130, 246, 0.1);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+  --gradient-secondary: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  --gradient-accent: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+
+body {
+  font-family: "Inter", "Open Sans", sans-serif;
+  background-color: #000000;
+  color: var(--text-primary);
+  position: relative;
+  background: transparent;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  perspective: 1500px;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+}
+
+body.tunnel-transition {
+  perspective: 2000px;
+  perspective-origin: center center;
+}
+
+#neural-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-in-out 0.4s;
+  z-index: 1;
+  padding: 0;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+  transform: scale(1) translateZ(0);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  pointer-events: none;
+}
+
+section.section-show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  animation: tunnelEnter 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  pointer-events: auto;
+}
+
+/* Reset animations when section is hidden */
+section:not(.section-show) {
+  animation: none;
+}
+
+/* Tunnel/Digging Animation - Smooth Tunnel Effect */
+@keyframes tunnelEnter {
+  0% {
+    transform: scale(0.2) translateZ(-500px) rotateX(5deg);
+    opacity: 0;
+    filter: blur(20px) brightness(0.4);
+  }
+  10% {
+    transform: scale(0.35) translateZ(-400px) rotateX(3deg);
+    opacity: 0.15;
+    filter: blur(18px) brightness(0.5);
+  }
+  25% {
+    transform: scale(0.5) translateZ(-300px) rotateX(2deg);
+    opacity: 0.3;
+    filter: blur(15px) brightness(0.6);
+  }
+  40% {
+    transform: scale(0.65) translateZ(-200px) rotateX(1deg);
+    opacity: 0.5;
+    filter: blur(12px) brightness(0.7);
+  }
+  55% {
+    transform: scale(0.75) translateZ(-120px) rotateX(0.5deg);
+    opacity: 0.65;
+    filter: blur(8px) brightness(0.8);
+  }
+  70% {
+    transform: scale(0.85) translateZ(-60px) rotateX(0deg);
+    opacity: 0.8;
+    filter: blur(5px) brightness(0.85);
+  }
+  85% {
+    transform: scale(0.93) translateZ(-20px) rotateX(0deg);
+    opacity: 0.92;
+    filter: blur(2px) brightness(0.95);
+  }
+  95% {
+    transform: scale(0.98) translateZ(-5px) rotateX(0deg);
+    opacity: 0.98;
+    filter: blur(1px) brightness(0.98);
+  }
+  100% {
+    transform: scale(1) translateZ(0) rotateX(0deg);
+    opacity: 1;
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes tunnelExit {
+  0% {
+    transform: scale(1) translateZ(0) rotateX(0deg);
+    opacity: 1;
+    filter: blur(0) brightness(1);
+  }
+  10% {
+    transform: scale(1.05) translateZ(50px) rotateX(-1deg);
+    opacity: 0.95;
+    filter: blur(2px) brightness(0.95);
+  }
+  25% {
+    transform: scale(1.12) translateZ(120px) rotateX(-2deg);
+    opacity: 0.85;
+    filter: blur(4px) brightness(0.9);
+  }
+  40% {
+    transform: scale(1.22) translateZ(180px) rotateX(-3deg);
+    opacity: 0.7;
+    filter: blur(7px) brightness(0.8);
+  }
+  55% {
+    transform: scale(1.35) translateZ(250px) rotateX(-4deg);
+    opacity: 0.5;
+    filter: blur(12px) brightness(0.65);
+  }
+  70% {
+    transform: scale(1.5) translateZ(350px) rotateX(-5deg);
+    opacity: 0.3;
+    filter: blur(18px) brightness(0.5);
+  }
+  85% {
+    transform: scale(1.7) translateZ(450px) rotateX(-6deg);
+    opacity: 0.15;
+    filter: blur(22px) brightness(0.35);
+  }
+  100% {
+    transform: scale(2) translateZ(600px) rotateX(-7deg);
+    opacity: 0;
+    filter: blur(30px) brightness(0.2);
+  }
+}
+
+/* Tunnel overlay effect - Enhanced depth perception */
+body.tunnel-transition::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(0, 0, 0, 0.7) 20%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0.2) 80%,
+    transparent 100%
+  );
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  animation: tunnelExpand 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  pointer-events: none;
+}
+
+body.tunnel-transition::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center, 
+    transparent 0%, 
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 9997;
+  animation: tunnelFade 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes tunnelExpand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  15% {
+    width: 80vw;
+    height: 80vw;
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  30% {
+    width: 140vw;
+    height: 140vw;
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  50% {
+    width: 200vw;
+    height: 200vw;
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  70% {
+    width: 250vw;
+    height: 250vw;
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  85% {
+    width: 300vw;
+    height: 300vw;
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+  100% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+@keyframes tunnelFade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Section exit animation - only during transition */
+body.tunnel-transition section.tunnel-exiting,
+body.tunnel-transition #header.tunnel-exiting {
+  animation: tunnelExit 0.8s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Ensure header can also exit */
+#header.tunnel-exiting {
+  animation: tunnelExit 0.8s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+  pointer-events: none;
+}
+
+section .container {
+  background: transparent;
+  padding: 30px;
+  min-height: auto;
+  padding-bottom: 50px;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-top: 140px;
+    padding-bottom: 30px;
+  }
+
+  section .container {
+    min-height: auto;
+    padding-bottom: 60px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding-top: 130px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  section {
+    padding-top: 120px;
+    padding-bottom: 30px;
+  }
+}
+
+.section-title h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.section-title h2:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--primary-color);
+  margin: 4px 10px;
+}
+
+.section-title p {
+  margin: 0;
+  margin: -15px 0 15px 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.section-title p:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  text-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Import component styles */
+@import '../components/Navigation/Navigation.css';
+@import '../components/Header/Header.css';
+@import '../components/About/About.css';
+@import '../components/Resume/Resume.css';
+@import '../components/Experience/Experience.css';
+@import '../components/Education/Education.css';
+@import '../components/Portfolio/Portfolio.css';
+@import '../components/Contact/Contact.css';
+

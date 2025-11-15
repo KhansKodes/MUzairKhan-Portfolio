@@ -1,0 +1,135 @@
+/*--------------------------------------------------------------
+# Resume - Page Animations
+--------------------------------------------------------------*/
+#resume {
+  animation: pageEnter 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+#resume .section-title {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pdf-icon {
+  font-size: 7rem;
+  background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  animation: iconBounce 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+}
+
+@keyframes iconBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-180deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.btn-pdf {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2.93667px 22.025px;
+  gap: 14.68px;
+  border-radius: 999px;
+  flex: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: inset 0px 0px 20px 4px rgba(255, 255, 255, 0.25);
+  width: auto;
+  min-width: 160.05px;
+  height: 44.05px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: -0.0001em;
+  color: #FFFFFF;
+  margin: 0 auto;
+}
+
+.btn-pdf:hover {
+  box-shadow: inset 0px 0px 25px 6px rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .pdf-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-pdf {
+    min-width: 150px;
+    height: 42px;
+    font-size: 13px;
+    padding: 2.5px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-icon {
+    font-size: 4rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .btn-pdf {
+    min-width: 140px;
+    height: 40px;
+    font-size: 12px;
+    padding: 2.5px 18px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 393px) {
+  .pdf-icon {
+    font-size: 3.5rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .btn-pdf {
+    min-width: 130px;
+    height: 38px;
+    font-size: 11px;
+    padding: 2px 16px;
+    gap: 10px;
+  }
+}
+
