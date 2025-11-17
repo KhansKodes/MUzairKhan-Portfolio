@@ -49,6 +49,16 @@ const Header = ({ onSectionChange }) => {
                 <i className="bi bi-envelope"></i>
               </a>
             </div>
+            <div className="social-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+              <a href="https://github.com/KhansKodes" className="github" target="_blank" rel="noopener noreferrer">
+                <i className="bi bi-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/m-uzair-khann" className="linkedin" target="_blank" rel="noopener noreferrer">
+                <i className="bi bi-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
           </div>
           
           <div className="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
@@ -57,17 +67,6 @@ const Header = ({ onSectionChange }) => {
               <div className="image-glow"></div>
             </div>
           </div>
-        </div>
-
-        <div className="social-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-          <a href="https://github.com/KhansKodes" className="github" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-github"></i>
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/m-uzair-khann" className="linkedin" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-linkedin"></i>
-            <span>LinkedIn</span>
-          </a>
         </div>
       </div>
     </header>
